@@ -42,11 +42,10 @@ $posts = [
     ],
 ];
 
+var_dump($posts["10/01/2019"][0]);
 $date = array_keys($posts);
-// var_dump($date);
+var_dump($date);
 var_dump($posts[$date[0]]);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +58,14 @@ var_dump($posts[$date[0]]);
     <title>Document</title>
 </head>
 <body>
-<?php
-    for ($_i = 0; $_i < count($posts); $_i++) {
-        $post = $posts[$date[$_i]]; ?>
-        <div class="margin">
+    <?php
+        for ($_i = 0; $_i < count($posts); $_i++) {
+            $post = $posts[$date[$_i]]; ?>
+            <div class="margin">
+                <div>
+                    <p class="text"><?= $date[$_i] ?></p>
+                </div>
             <div>
-                <p class="text"><?= $date[$_i] ?></p>
-            </div>
-        <div>
             <?php
                 for ($_j = 0; $_j < count($post); $_j++) { ?>
                     <div>
@@ -74,10 +73,8 @@ var_dump($posts[$date[0]]);
                         <p class="green"><?= $post[$_j]['author'] ?></p>
                         <p class="blue"><?= $post[$_j]['text'] ?></p>
                     </div>
-            <?php } ?>
-                </div>
-            </div>
-        <?php } ?>
+            <?php }
+    } ?>
 
 </body>
 </html>
